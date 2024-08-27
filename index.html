@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Falcon.css" />
+    <title>Falcon Home</title>
+
+    <script>
+      document
+        .getElementById("requestType")
+        .addEventListener("change", showAdditionalFields);
+      function showAdditionalFields() {
+        var selectBox = document.getElementById("requestType");
+        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+        // Hide both fields initially
+        document.getElementById("additionalData").style.display = "none";
+        document.getElementById("additionalDataField").style.display = "none";
+        document.getElementById("additionalDataField").style.display = "none";
+
+        if (selectedValue === "creation") {
+          document.getElementById("additionalData").style.display = "block";
+        } else if (selectedValue === "modification") {
+          document.getElementById("additionalDataField").style.display =
+            "block";
+        } else if (selectedValue === "deletion") {
+          document.getElementById("additionalDataField").style.display =
+            "block";
+        }
+      }
+
+      function updateApprovalLevel() {
+            var role = document.getElementById('role').value;
+            var approvalLevel2 = document.getElementById('approvalLevel2');
+
+           
+            approvalLevel2.innerHTML = '<option value="Select">Select</option>';
+
+            if (role === 'Analyst' || role === 'Client Level Supervisor') {
+                
+                var option1 = document.createElement('option');
+                option1.value = 'vimalKumar';
+                option1.text = 'Vimalkumar Fernandes';
+                approvalLevel2.appendChild(option1);
+            } 
+            else if (role === 'Client Level Expert') {
+                
+                var option2 = document.createElement('option');
+                option2.value = 'sarthakRoy';
+                option2.text = 'Sarthak Roy / Sunil Purohit';
+                approvalLevel2.appendChild(option2);
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <div class="bx-1">
+      <div class="head">
+        <p>Default Data</p>
+      </div>
+
+      <div class="form-bx">
+        <!-- First Field: Types of User Request -->
+        <div class="field">
+          <div class="form-head">
+            <p>Types of User Request: <span>*</span></p>
+          </div>
+          <div class="form-input">
+            <select id="requestType" onchange="showAdditionalFields();">
+              <option value="Select">Select</option>
+              <option value="creation">Creation</option>
+              <option value="modification">Modification</option>
+              <option value="deletion">Deletion</option>
+            </select>
+          </div>
+        </div>
+        <!-- ./First Field -->
+
+        <!-- Second Field: Request For -->
+        <div class="field">
+          <div class="form-head">
+            <p>Request For: <span>*</span></p>
+          </div>
+          <div class="form-input">
+            <div class="rd-bx">
+              <div class="rd-1">
+                <input type="radio" id="myself" name="requestFor" checked />
+                <label for="myself">Myself</label>
+              </div>
+              <div class="rd-2">
+                <input type="radio" id="onBehalf" name="requestFor" />
+                <label for="onBehalf">On behalf of</label>
+              </div>
+            </div>
+            <div class="emp-bx">
+              <input
+                type="text"
+                placeholder="Enter Employee Details..."
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <!-- ./Second Field -->
+
+        <!-- Third Field: Application -->
+        <div class="field">
+          <div class="form-head">
+            <p>Application: <span>*</span></p>
+          </div>
+          <div class="form-input">
+            <select>
+              <option value="Select">Select</option>
+              <option value="falcon">falcon</option>
+              <option value="Jocata">Jocata</option>
+              <option value="Aspect">Aspect</option>
+              <option value="sfdc">SFDC</option>
+              <option value="Aadhar Vault">Aadhar Vault</option>
+              <option value="CRM Next">CRM Next</option>
+            </select>
+          </div>
+        </div>
+        <!-- ./Third Field -->
+
+        <!-- Fourth Field: Module Name -->
+        <div class="field">
+          <div class="form-head">
+            <p>Module Name: <span>*</span></p>
+          </div>
+          <div class="form-input">
+            <select>
+              <option value="Select">Select</option>
+              <option value="falcon">falcon</option>
+              <option value="Jocata">Jocata</option>
+              <option value="Aspect">Aspect</option>
+              <option value="sfdc">SFDC</option>
+              <option value="Aadhar Vault">Aadhar Vault</option>
+              <option value="CRM Next">CRM Next</option>
+            </select>
+          </div>
+        </div>
+        <!-- ./Fourth Field -->
+
+        <!-- Fifth Field: Business Justification -->
+        <div class="field">
+          <div class="form-head">
+            <p>Business Justification: <span>*</span></p>
+          </div>
+          <div class="form-input">
+            <input
+              type="text"
+              placeholder="Enter Business Justification Here..."
+            />
+          </div>
+        </div>
+        <!-- ./Fifth Field -->
+      </div>
+    </div>
+
+    <!-- creation -->
+
+    <!--Additional Data Required For Aspect-->
+    <div class="bx-2" id="additionalData" style="display: none">
+      <div class="head">
+        <p>Additional Data Required For Aspect</p>
+      </div>
+
+      <div class="form-grp-bx">
+        <div class="form-bx-1">
+          <!-- Additional Field: User Role -->
+          <div class="form-field">
+            <div class="form-head">
+              <p>UserId: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="32810" disabled />
+            </div>
+          </div>
+
+          <!-- Additional Field: Email Id -->
+          <div class="form-bx-5">
+            <div class="form-field">
+              <div class="form-head">
+                <p>First Name: <span>*</span></p>
+              </div>
+              <div class="form-input">
+                <input type="text" placeholder="Chetan" disabled />
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Field: Approval Level 1 -->
+          <div class="form-field">
+            <div class="form-head">
+              <p>Last Name: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="Lad" disabled />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <div class="form-head">
+              <p>Approval level 1:<span>*</span></p>
+            </div>
+            <div class="form-input">
+              <select>
+                <option value="Select">Select</option>
+                <option value="Niki Kushe">Line Manager</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <div class="form-head">
+                <p>Approval Level 2: <span>*</span></p>
+            </div>
+            <div class="form-input">
+                <select id="approvalLevel2">
+                    <option value="Select">Select</option>
+                    <option value="vimalKumar">Vimalkumar Fernandes</option>
+                    <option value="sarthakRoy">Sarthak Roy / Sunil Purohit</option>
+                </select>
+            </div>
+        </div>
+          <!-- <div class="form-field">
+                    <div class="form-head">
+                        <p>Email address: <span>*</span></p>
+                    </div>
+                    <div class="form-input">
+                        <input type="text" placeholder="Auto populate from HRMS/ OSM " disabled />
+                    </div>
+                </div> -->
+        </div>
+
+        <div class="form-bx-2">
+          <!-- Additional Field: User Role -->
+          <div class="form-field">
+            <div class="form-head">
+                <p>Role: <span>*</span></p>
+            </div>
+            <div class="form-input">
+                <select id="role" onchange="updateApprovalLevel()">
+                    <option value="Select">Select</option>
+                    <option value="Analyst">Analyst</option>
+                    <option value="Client Level Supervisor">Client Level Supervisor</option>
+                    <option value="Client Level Expert">Client Level Expert</option>
+                </select>
+            </div>
+        </div>
+    
+
+          <div class="form-bx-9">
+            <div class="form-field">
+              <div class="form-head">
+                <p>Request Status:<span>*</span></p>
+              </div>
+              <div class="form-input">
+                <select>
+                  <option value="Select">Select</option>
+                  <option value="Open">Open</option>
+                  <option value="WIP">WIP</option>
+                  <option value="Close">close</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+            <div class="form-head">
+                            <p>Request Type:<span>*</span></p>
+                        </div>
+                        <div class="form-input">
+                            <select>
+                                <option value="Select">Select</option>
+                                <option value="Add">Add</option>
+                                <option value="Modify">Modify</option>
+                                <option value="Delete">Delete</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+            <div class="form-field">
+              <div class="form-head">
+                <p>Email id: <span>*</span></p>
+              </div>
+              <div class="form-input">
+                <input
+                  type="text"
+                  placeholder="chetan.lad@rblbank.com"
+                  disabled
+                />
+              </div>
+            </div>
+
+            
+
+        
+
+            <!-- Additional Field: Status -->
+            <!-- <div class="form-field">
+                        <div class="form-head">
+                            <p>Status: <span>*</span></p>
+                        </div>
+                        <div class="form-input">
+                            <label>
+                                <input type="radio" name="option" value="enable"> Enable
+                            </label>
+                            <label>
+                                <input type="radio" name="option" value="disable"> Disable
+                            </label>
+                        </div>
+                    </div> -->
+
+            <!-- Additional Field: Approval Level 2 -->
+
+            <!-- <div class="form-field">
+                        <div class="form-head">
+                            <p>Approval Level 2: <span>*</span></p>
+                        </div>
+                        <div class="form-input">
+                            <select>
+                                <option value="Select">Select</option>
+                                <option value="Amit Goel">Amit Goel</option>
+                            </select>
+                        </div>
+                    </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modification -->
+
+    <!-- Module bx-2: Additional Data Required For Aadhar Vault -->
+    <div class="bx-2" id="additionalDataField" style="display: none">
+      <div class="head">
+        <p>Additional Data Required For Aspect</p>
+        <!-- Header for bx-2 -->
+      </div>
+
+      <div class="form-grp-bx">
+        <div class="form-bx-1">
+          <!-- Form Field 1 -->
+          <div class="form-field">
+            <div class="form-head">
+              <p>UserId: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="32810" disabled />
+            </div>
+          </div>
+
+          <!-- Form Field 2 -->
+          <div class="form-field">
+            <div class="form-head">
+              <p>First Name: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="Chetan" disabled />
+            </div>
+          </div>
+
+          <!-- Form Field 3 -->
+          <div class="form-field">
+            <div class="form-head">
+              <p>Last Name: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="Lad" disabled />
+            </div>
+          </div>
+
+          <!-- Form Field 4 -->
+          <div class="form-field">
+            <div class="form-head">
+              <p>Approval Level 1: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <select>
+                <option value="Select">Select</option>
+                <option value="Approving Authority Level 1">
+                  Line Manager
+                </option>
+              </select>
+            </div>
+          </div>
+
+          
+        </div>
+
+        <div class="form-bx-2">
+          <!-- Form Field 5 -->
+          <div class="form-field">
+            <div class="form-head">
+                <p>Role: <span>*</span></p>
+            </div>
+            <div class="form-input">
+                <select id="role" onchange="updateApprovalLevel()">
+                    <option value="Select">Select</option>
+                    <option value="Analyst">Analyst</option>
+                    <option value="Client Level Supervisor">Client Level Supervisor</option>
+                    <option value="Client Level Expert">Client Level Expert</option>
+                </select>
+            </div>
+        </div>
+    
+
+          <div class="form-field">
+            <div class="form-head">
+              <p>Email id: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <input
+                type="text"
+                placeholder="chetan.lad@rblbank.com"
+                disabled
+              />
+            </div>
+          </div>
+
+          <!-- Form Field 6 -->
+          <div class="form-field">
+            <div class="form-head">
+              <p>Request Status: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <select>
+                <option value="Select">Select</option>
+                <option value="Open">Open</option>
+                <option value="WIP">WIP</option>
+                <option value="Close">Close</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Form Field 7 -->
+          <div class="form-field">
+            <div class="form-head">
+                <p>Approval Level 2: <span>*</span></p>
+            </div>
+            <div class="form-input">
+                <select id="approvalLevel2">
+                    <option value="Select">Select</option>
+                    <option value="vimalKumar">Vimalkumar Fernandes</option>
+                    <option value="sarthakRoy">Sarthak Roy / Sunil Purohit</option>
+                </select>
+            </div>
+        </div>
+    
+        </div>
+      </div>
+    </div>
+
+    <!-- Deletion -->
+    <div class="bx-2" id="additionalDataField" style="display: none">
+      <div class="head">
+        <p>Additional Data Required For Aspect</p>
+        <!-- Header for bx-2 -->
+      </div>
+
+      <div class="form-grp-bx">
+        <div class="form-bx-1">
+          <!-- Form Field 1 -->
+          <div class="form-field">
+            <div class="form-head">
+                <p>Role: <span>*</span></p>
+            </div>
+            <div class="form-input">
+                <select id="role" onchange="updateApprovalLevel()">
+                    <option value="Select">Select</option>
+                    <option value="Analyst">Analyst</option>
+                    <option value="Client Level Supervisor">Client Level Supervisor</option>
+                    <option value="Client Level Expert">Client Level Expert</option>
+                </select>
+            </div>
+        </div>
+    
+          <!-- ./Form Field 1 -->
+        </div>
+
+        <div class="form-bx-2">
+          <!-- Form Field 5 -->
+          <div class="form-field">
+            <div class="form-head">
+              <p>Approval Level 1: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <select>
+                <select>
+                  <option value="Select">Select</option>
+                  <option value="Amit Goel">Amit Goel</option>
+                  <option value="Niki Kushe">Niki Kushe</option>
+                </select>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons for Reset and Submit -->
+    <div class="btn-grp-bx">
+      <div class="btn btn-1">
+        <button>Reset</button>
+      </div>
+      <div class="btn btn-2">
+        <button>Submit</button>
+      </div>
+    </div>
+  </body>
+</html>
