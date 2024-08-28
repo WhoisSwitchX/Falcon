@@ -16,7 +16,7 @@
         // Hide both fields initially
         document.getElementById("additionalData").style.display = "none";
         document.getElementById("additionalDataField").style.display = "none";
-        document.getElementById("additionalDataField").style.display = "none";
+        document.getElementById("additionalDataField2").style.display = "none";
 
         if (selectedValue === "creation") {
           document.getElementById("additionalData").style.display = "block";
@@ -24,7 +24,7 @@
           document.getElementById("additionalDataField").style.display =
             "block";
         } else if (selectedValue === "deletion") {
-          document.getElementById("additionalDataField").style.display =
+          document.getElementById("additionalDataField2").style.display =
             "block";
         }
       }
@@ -177,6 +177,16 @@
             </div>
           </div>
 
+
+          <div class="form-field">
+            <div class="form-head">
+              <p>Region: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="Production" disabled />
+            </div>
+          </div>
+
           <!-- Additional Field: Email Id -->
           <div class="form-bx-5">
             <div class="form-field">
@@ -190,12 +200,15 @@
           </div>
 
           <!-- Additional Field: Approval Level 1 -->
+         
+
+
           <div class="form-field">
             <div class="form-head">
-              <p>Last Name: <span>*</span></p>
+              <p>Mobile Number: <span>*</span></p>
             </div>
             <div class="form-input">
-              <input type="text" placeholder="Lad" disabled />
+              <input type="text" placeholder="987654321" disabled />
             </div>
           </div>
 
@@ -211,18 +224,7 @@
             </div>
           </div>
 
-          <div class="form-field">
-            <div class="form-head">
-                <p>Approval Level 2: <span>*</span></p>
-            </div>
-            <div class="form-input">
-                <select id="approvalLevel2">
-                    <option value="Select">Select</option>
-                    <option value="vimalKumar">Vimalkumar Fernandes</option>
-                    <option value="sarthakRoy">Sarthak Roy / Sunil Purohit</option>
-                </select>
-            </div>
-        </div>
+          
           <!-- <div class="form-field">
                     <div class="form-head">
                         <p>Email address: <span>*</span></p>
@@ -235,6 +237,20 @@
 
         <div class="form-bx-2">
           <!-- Additional Field: User Role -->
+
+
+          <div class="form-field">
+            <div class="form-head">
+                            <p>Request Type:<span>*</span></p>
+                        </div>
+                        <div class="form-input">
+                            <select>
+                              <option value="Add">Add</option>
+                            </select>
+                        </div>
+                    </div>
+
+
           <div class="form-field">
             <div class="form-head">
                 <p>Role: <span>*</span></p>
@@ -253,31 +269,14 @@
           <div class="form-bx-9">
             <div class="form-field">
               <div class="form-head">
-                <p>Request Status:<span>*</span></p>
+                <p>Last Name: <span>*</span></p>
               </div>
               <div class="form-input">
-                <select>
-                  <option value="Select">Select</option>
-                  <option value="Open">Open</option>
-                  <option value="WIP">WIP</option>
-                  <option value="Close">close</option>
-                </select>
+                <input type="text" placeholder="Lad" disabled />
               </div>
             </div>
 
-            <div class="form-field">
-            <div class="form-head">
-                            <p>Request Type:<span>*</span></p>
-                        </div>
-                        <div class="form-input">
-                            <select>
-                                <option value="Select">Select</option>
-                                <option value="Add">Add</option>
-                                <option value="Modify">Modify</option>
-                                <option value="Delete">Delete</option>
-                            </select>
-                        </div>
-                    </div>
+            
 
 
             <div class="form-field">
@@ -288,43 +287,25 @@
                 <input
                   type="text"
                   placeholder="chetan.lad@rblbank.com"
-                  disabled
-                />
+                  disabled/>
               </div>
             </div>
 
-            
 
-        
+            <div class="form-field">
+              <div class="form-head">
+                  <p>Approval Level 2: <span>*</span></p>
+              </div>
+              <div class="form-input">
+                  <select id="approvalLevel2">
+                      <option value="Select">Select</option>
+                      <option value="vimalKumar">Vimalkumar Fernandes</option>
+                      <option value="sarthakRoy">Sarthak Roy / Sunil Purohit</option>
+                  </select>
+              </div>
+          </div>
 
-            <!-- Additional Field: Status -->
-            <!-- <div class="form-field">
-                        <div class="form-head">
-                            <p>Status: <span>*</span></p>
-                        </div>
-                        <div class="form-input">
-                            <label>
-                                <input type="radio" name="option" value="enable"> Enable
-                            </label>
-                            <label>
-                                <input type="radio" name="option" value="disable"> Disable
-                            </label>
-                        </div>
-                    </div> -->
 
-            <!-- Additional Field: Approval Level 2 -->
-
-            <!-- <div class="form-field">
-                        <div class="form-head">
-                            <p>Approval Level 2: <span>*</span></p>
-                        </div>
-                        <div class="form-input">
-                            <select>
-                                <option value="Select">Select</option>
-                                <option value="Amit Goel">Amit Goel</option>
-                            </select>
-                        </div>
-                    </div> -->
           </div>
         </div>
       </div>
@@ -335,7 +316,7 @@
     <!-- Module bx-2: Additional Data Required For Aadhar Vault -->
     <div class="bx-2" id="additionalDataField" style="display: none">
       <div class="head">
-        <p>Additional Data Required For Aspect</p>
+        <p>Additional Data Required For Falcon</p>
         <!-- Header for bx-2 -->
       </div>
 
@@ -351,6 +332,18 @@
             </div>
           </div>
 
+
+
+          <div class="form-field">
+            <div class="form-head">
+              <p>Region: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="Production" disabled />
+            </div>
+          </div>
+
+
           <!-- Form Field 2 -->
           <div class="form-field">
             <div class="form-head">
@@ -362,14 +355,19 @@
           </div>
 
           <!-- Form Field 3 -->
+          
+
+
           <div class="form-field">
             <div class="form-head">
-              <p>Last Name: <span>*</span></p>
+              <p>Mobile Number: <span>*</span></p>
             </div>
             <div class="form-input">
-              <input type="text" placeholder="Lad" disabled />
+              <input type="text" placeholder="9876543210" disabled />
             </div>
           </div>
+
+
 
           <!-- Form Field 4 -->
           <div class="form-field">
@@ -391,6 +389,21 @@
 
         <div class="form-bx-2">
           <!-- Form Field 5 -->
+
+          <div class="form-field">
+            <div class="form-head">
+                            <p>Request Type:<span>*</span></p>
+                        </div>
+                        <div class="form-input">
+                            <select>
+                                <option value="Modify">Modify</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
           <div class="form-field">
             <div class="form-head">
                 <p>Role: <span>*</span></p>
@@ -404,7 +417,15 @@
                 </select>
             </div>
         </div>
-    
+
+        <div class="form-field">
+          <div class="form-head">
+            <p>Last Name: <span>*</span></p>
+          </div>
+          <div class="form-input">
+            <input type="text" placeholder="Lad" disabled />
+          </div>
+        </div>
 
           <div class="form-field">
             <div class="form-head">
@@ -420,7 +441,7 @@
           </div>
 
           <!-- Form Field 6 -->
-         
+        
           <!-- Form Field 7 -->
           <div class="form-field">
             <div class="form-head">
@@ -440,9 +461,9 @@
     </div>
 
     <!-- Deletion -->
-    <div class="bx-2" id="additionalDataField" style="display: none">
+    <div class="bx-2" id="additionalDataField2" style="display: none">
       <div class="head">
-        <p>Additional Data Required For Aspect</p>
+        <p>Additional Data Required For Falcon</p>
         <!-- Header for bx-2 -->
       </div>
 
@@ -451,37 +472,92 @@
           <!-- Form Field 1 -->
           <div class="form-field">
             <div class="form-head">
-                <p>Role: <span>*</span></p>
+              <p>UserId: <span>*</span></p>
             </div>
             <div class="form-input">
-                <select id="role" onchange="updateApprovalLevel()">
-                    <option value="Select">Select</option>
-                    <option value="Analyst">Analyst</option>
-                    <option value="Client Level Supervisor">Client Level Supervisor</option>
-                    <option value="Client Level Expert">Client Level Expert</option>
-                </select>
+              <input type="text" placeholder="32810" disabled />
             </div>
-        </div>
-    
-          <!-- ./Form Field 1 -->
-        </div>
+          </div>
 
-        <div class="form-bx-2">
-          <!-- Form Field 5 -->
+          <div class="form-field">
+            <div class="form-head">
+              <p>Region: <span>*</span></p>
+            </div>
+            <div class="form-input">
+              <input type="text" placeholder="Production" disabled />
+            </div>
+          </div>
+
+        
+
+
+
+          <!-- Form Field 4 -->
           <div class="form-field">
             <div class="form-head">
               <p>Approval Level 1: <span>*</span></p>
             </div>
             <div class="form-input">
               <select>
-                <select>
-                  <option value="Select">Select</option>
-                  <option value="Amit Goel">Amit Goel</option>
-                  <option value="Niki Kushe">Niki Kushe</option>
-                </select>
+                <option value="Select">Select</option>
+                <option value="Approving Authority Level 1">
+                  Line Manager
+                </option>
               </select>
             </div>
           </div>
+
+          
+        </div>
+
+        <div class="form-bx-2">
+          <!-- Form Field 5 -->
+
+          <div class="form-field">
+            <div class="form-head">
+                            <p>Request Type:<span>*</span></p>
+                        </div>
+                        <div class="form-input">
+                            <select>
+                                <option value="delete" >Delete</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+          <div class="form-field">
+            <div class="form-head">
+                <p>Role: <span>*</span></p>
+            </div>
+            <div class="form-input">
+                <select id="role" onchange="updateApprovalLevel()">
+                    <option value="Select">Existing Role</option>
+                </select>
+            </div>
+        </div>
+
+      
+
+
+         
+          <!-- Form Field 6 -->
+        
+          <!-- Form Field 7 -->
+          <div class="form-field">
+            <div class="form-head">
+                <p>Approval Level 2: <span>*</span></p>
+            </div>
+            <div class="form-input">
+                <select id="approvalLevel2">
+                    <option value="Select">Select</option>
+                    <option value="vimalKumar">Vimalkumar Fernandes</option>
+                    <option value="sarthakRoy">Sarthak Roy / Sunil Purohit</option>
+                </select>
+            </div>
+        </div>
+    
         </div>
       </div>
     </div>
